@@ -1,0 +1,15 @@
+declared-services:
+  Cloudant-Posadas:
+    label: alchemy-service
+    plan: Lite
+applications:
+- name: sentiment-analisys
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - alchemy-service
+  env:
+    NPM_CONFIG_PRODUCTION: false
+
